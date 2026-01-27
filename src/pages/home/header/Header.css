@@ -1,0 +1,295 @@
+/* ================= HEADER ROOT ================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s, color 0.3s;
+}
+
+.light .header {
+  background: #fff;
+  color: #111;
+}
+
+.dark .header {
+  background: #1e1e1e;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+/* ================= HEADER INNER ================= */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #1976d2;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'Pacifico', cursive;
+}
+
+.logo h3 span {
+  color: #ff5722;
+}
+
+/* ================= DESKTOP NAV ================= */
+.nav-desktop {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1976d2;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* ================= MOBILE NAV ================= */
+.nav-mobile {
+  display: none;
+  margin-left: auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header-inner {
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo h3 {
+    font-size: 20px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+}
+
+/* ================= DRAWER OVERLAY ================= */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+/* ================= DRAWER ================= */
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100%;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dark .drawer {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* ================= DRAWER LINKS ================= */
+.drawer-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dark .drawer-link {
+  border-bottom: 1px solid #333;
+}
+
+/* ================= DRAWER THEME BUTTON ================= */
+.drawer-theme-btn {
+  margin-top: auto;
+  padding: 12px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  padding: 6px 14px;
+  border: 1.5px solid #e53935;
+  background: transparent;
+  color: #e53935;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.logout-btn:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+/* Remove underline animation */
+.logout-btn::after {
+  display: none;
+}
+.dark .logout-btn {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.dark .logout-btn:hover {
+  background: #ff6b6b;
+  color: #111;
+}
+
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dark .logout-modal {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #ccc;
+  color: #111;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #b0b0b0;
+}
+
+.confirm-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #e53935;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #d32f2f;
+}

@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Apple iPhone 15",
+      "brand": "Apple",
+      "category": "mobiles",
+      "price": 59999,
+      "discountPercentage": 5,
+      "rating": 4.7,
+      "stock": 15,
+      "thumbnail": "/images/Apple iPhone 15.jpg",
+      "images": ["/images/Apple iPhone 15.jpg"],
+      "description": "Apple iPhone 15 with A16 Bionic chip, advanced camera system, and long-lasting battery life."
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S23",
+      "brand": "Samsung",
+      "category": "mobiles",
+      "price": 17499,
+      "discountPercentage": 8,
+      "rating": 4.6,
+      "stock": 20,
+      "thumbnail": "/images/Samsung Galaxy S23.jpg",
+      "images": ["/images/Samsung Galaxy S23.jpg"],
+      "description": "Samsung Galaxy S23 with powerful Snapdragon processor and stunning AMOLED display."
+    },
+    {
+      "id": 3,
+      "title": "MacBook Pro M2",
+      "brand": "Apple",
+      "category": "laptops",
+      "price": 199999,
+      "discountPercentage": 10,
+      "rating": 4.9,
+      "stock": 8,
+      "thumbnail": "/images/MacBook Pro M2.jpg",
+      "images": ["/images/MacBook Pro M2.jpg"],
+      "description": "MacBook Pro powered by M2 ch+ip, designed for professionals with exceptional performance."
+    },
+    {
+      "id": 4,
+      "title": "Sony WH-1000XM5 Headphones",
+      "brand": "Sony",
+      "category": "audio",
+      "price": 9499,
+      "discountPercentage": 15,
+      "rating": 4.8,
+      "stock": 25,
+      "thumbnail": "/images/Sony WH-1000XM5 Headphones.jpg",
+      "images": ["/images/Sony WH-1000XM5 Headphones.jpg"],
+      "description": "Industry-leading noise cancellation headphones with premium sound quality."
+    }  ]
+}

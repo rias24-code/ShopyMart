@@ -1,0 +1,84 @@
+/* ===== WHY CHOOSE US ===== */
+.why-choose {
+  padding: 70px 20px;
+  background: #f9fafc;
+  text-align: center;
+}
+
+.dark .why-choose {
+  background: #121212;
+  color: #fff;
+}
+
+.why-choose h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* ===== FEATURES GRID ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== FEATURE CARD ===== */
+.feature-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .feature-card {
+  background: #1e1e1e;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px) scale(1.03); /* Anti-gravity lift */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12); /* Deep shadow for height */
+}
+
+.feature-card {
+  /* ... existing styles ... */
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Ultra-smooth motion */
+}
+
+
+/* ===== ICON ===== */
+.feature-icon {
+  font-size: 42px;
+  color: #1976d2;
+  margin-bottom: 16px;
+}
+
+/* ===== TEXT ===== */
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.dark .feature-card p {
+  color: #ccc;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .why-choose h2 {
+    font-size: 28px;
+  }
+
+  .feature-icon {
+    font-size: 36px;
+  }
+}

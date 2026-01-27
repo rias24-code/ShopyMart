@@ -1,0 +1,125 @@
+/* Page background */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.login-card {
+  background: #ffffff;
+  padding: 32px 26px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Heading */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Error message */
+.error {
+  background-color: #ffecec;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Form */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.login-card input {
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #000;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-card input::placeholder {
+  color: #888;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.15);
+}
+
+/* Button */
+.login-card button {
+  padding: 12px;
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-card button:hover {
+  box-shadow: 0 6px 15px rgba(30, 136, 229, 0.4);
+}
+
+.login-card button:active {
+  transform: scale(0.97);
+}
+
+/* Footer text */
+.login-card p {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Links */
+.login-card a {
+  color: #1e88e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 26px 20px;
+  }
+}

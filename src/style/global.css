@@ -1,0 +1,67 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* LIGHT THEME */
+.light {
+  background-color: #f5f7fb;
+  color: #111;
+}
+
+/* DARK THEME */
+.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Buttons & links theme-safe */
+button {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1976d2;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  background: #fbfbfb;
+  color: black;
+  font-weight: 500;
+}
+.footer a {
+  color: black;
+  margin: 0 6px;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1; /* 👈 pushes footer to bottom */
+}

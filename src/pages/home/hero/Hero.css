@@ -1,0 +1,133 @@
+/* ===== HERO CONTAINER ===== */
+.hero {
+  position: relative;
+  height: 55vh;       /* smaller height for desktop */
+  min-height: 300px;  /* ensures minimum height */
+  overflow: hidden;
+  border-radius: 8px; /* subtle rounded corners */
+}
+
+/* ===== SLIDES ===== */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1s ease, transform 1s ease;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  color: white;
+}
+
+/* Title & Subtitle */
+.overlay h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+.overlay p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Button */
+.overlay button {
+  padding: 12px 28px;
+  font-size: 16px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overlay button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero {
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  .overlay {
+    padding-left: 40px;
+  }
+
+  .overlay h1 {
+    font-size: 36px;
+  }
+
+  .overlay p {
+    font-size: 18px;
+  }
+
+  .overlay button {
+    padding: 10px 22px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+    min-height: 220px;
+  }
+
+  .overlay {
+    padding: 16px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .overlay button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.light .offer-products {
+  background: #f9f9f9;
+}
+
+.dark .offer-products {
+  background: #1e1e1e;
+  color: #fff;
+}
