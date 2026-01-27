@@ -1,16 +1,65 @@
-# React + Vite
+# 🛒 ShopyMart – React E-commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShopyMart is a modern, responsive e-commerce web application built using **React**, **Redux Toolkit**, and **Vite**.  
+It provides core shopping features such as authentication, product browsing, wishlist management, and protected routes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 🔐 User Authentication (Login & Register)
+- 🛍️ Product Listing
+- ❤️ Wishlist Management
+- 🛒 Cart Functionality
+- 🔒 Protected Routes
+- 🌗 Dark / Light Theme Toggle
+- ⚡ Fast Performance using Vite
+- 📱 Fully Responsive UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧑‍💻 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, React Router DOM
+- **State Management:** Redux Toolkit, Context API
+- **Styling:** CSS3
+- **Build Tool:** Vite
+- **Version Control:** Git & GitHub
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow the steps below to run this project locally:
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/rias24-code/ShopyMart.git
+
+2️⃣ Navigate to Project Folder
+cd ShopyMart
+
+3️⃣ Install Dependencies
+npm install
+
+4️⃣ Start Development Server
+npm run dev
+
+The app will run at: http://localhost:5173
+
+🤝 Contributing
+
+Contributions are welcome!
+If you want to improve this project:
+
+1.Fork the repository
+2.Create a new branch
+git checkout -b feature/your-feature-name
+3.Commit your changes
+4.Push to your fork
+5.Create a Pull Request
+
+🙌 Author
+Rias | 📧 Feel free to connect and contribute!
+
+⭐ If you like this project, don’t forget to star the repository!
