@@ -74,7 +74,7 @@ const handleGoogleLogin = async () => {
             onChange={e => setPassword(e.target.value)} />
 
       <button type="submit">Login</button>
-<button className="google-btn" onClick={handleGoogleLogin}>
+<button type="button" className="google-btn" onClick={handleGoogleLogin}>
   <img
     src="https://developers.google.com/identity/images/g-logo.png"
     alt="google"

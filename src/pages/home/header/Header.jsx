@@ -1,9 +1,11 @@
 import { useState, useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaMoon, FaSun, FaBars } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import useLogout from "../../../hooks/useLogout";
 import { ThemeContext } from "../../../context/ThemeContext";
 import { AuthContext } from "../../../context/AuthContext";
-import { useSelector } from "react-redux";
+
 import "./Header.css";
 
 const navItems = [
@@ -16,22 +18,17 @@ const navItems = [
 
 const Header = () => {
   const { mode, toggleTheme } = useContext(ThemeContext);
-  const { state, dispatch } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
+  const logout = useLogout();
 
   const [open, setOpen] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const location = useLocation();
-  const navigate = useNavigate();
 
   const wishlistCount = useSelector(
     state => state.wishlist?.items?.length || 0
   );
-
-  const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
-    navigate("/login", { replace: true });
-  };
 
   return (
     <>
@@ -89,49 +86,54 @@ const Header = () => {
       </header>
 
       {/* ================= MOBILE DRAWER ================= */}
-      {open && (
-        <div className="drawer-overlay" onClick={() => setOpen(false)}>
-          <aside className="drawer" onClick={e => e.stopPropagation()}>
-            <div className="drawer-header">
-              <span>Menu</span>
-              <button className="close-btn" onClick={() => setOpen(false)}>❌</button>
-            </div>
+{open && (
+  <div className="drawer-overlay" onClick={() => setOpen(false)}>
+    <aside className="drawer" onClick={e => e.stopPropagation()}>
+      <div className="drawer-header">
+        <span>Menu</span>
+        <button className="close-btn" onClick={() => setOpen(false)}>❌</button>
+      </div>
 
-            {state.isAuthenticated &&
-              navItems.map(item => (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className="drawer-link"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                  {item.label === "Wishlist" && wishlistCount > 0 && ` (${wishlistCount})`}
-                </Link>
-              ))}
+      {state.isAuthenticated &&
+        navItems.map(item => (
+          <Link
+            key={item.label}
+            to={item.path}
+            className="drawer-link"
+            onClick={() => setOpen(false)}
+          >
+            {item.label}
+            {item.label === "Wishlist" && wishlistCount > 0 && ` (${wishlistCount})`}
+          </Link>
+        ))}
 
-            {state.isAuthenticated ? (
-              <button
-                className="drawer-link"
-                onClick={() => {
-                  setOpen(false);
-                  setShowLogoutModal(true);
-                }}
-              >
-                Logout
-              </button>
-            ) : (
-              <Link to="/login" className="drawer-link" onClick={() => setOpen(false)}>
-                Login
-              </Link>
-            )}
-
-            <button className="drawer-theme-btn" onClick={toggleTheme}>
-              {mode === "dark" ? "Light Mode" : "Dark Mode"}
-            </button>
-          </aside>
-        </div>
+      {state.isAuthenticated ? (
+        <button
+          className="drawer-link"
+          onClick={() => {
+            setOpen(false);
+            setShowLogoutModal(true);
+          }}
+        >
+          Logout
+        </button>
+      ) : (
+        <Link
+          to="/login"
+          className="drawer-link"
+          onClick={() => setOpen(false)}
+        >
+          Login
+        </Link>
       )}
+
+      <button className="drawer-theme-btn" onClick={toggleTheme}>
+        {mode === "dark" ? "Light Mode" : "Dark Mode"}
+      </button>
+    </aside>
+  </div>
+)}
+
 
       {/* ================= LOGOUT MODAL ================= */}
       {showLogoutModal && (
@@ -148,11 +150,12 @@ const Header = () => {
                 Cancel
               </button>
 
+              {/* ✅ THIS IS THE LINE YOU ASKED ABOUT */}
               <button
                 className="confirm-btn"
                 onClick={() => {
                   setShowLogoutModal(false);
-                  handleLogout();
+                  logout();
                 }}
               >
                 Logout
