@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBEVrWErpU3-wqM5xQo4rq6KXs9-6O0OrY",
-  authDomain: "shopy-mart-97a85.firebaseapp.com",
-  projectId: "shopy-mart-97a85",
-  storageBucket: "shopy-mart-97a85.firebasestorage.app",
-  messagingSenderId: "748410250816",
-  appId: "1:748410250816:web:6b9bc1c74eac5588b921a5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
