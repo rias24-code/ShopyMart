@@ -65,3 +65,7 @@ a:hover {
 .app-content {
   flex: 1; /* 👈 pushes footer to bottom */
 }
+
+html, body, #root {
+  height: 100%;
+}
