@@ -1,42 +1,39 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./OfferProducts.css";
-import productsData from '../../../data/products.json';
+import ProductCard from "../../product/ProductCard";
+import { fetchProducts } from "../../../features/products/productsSlice";
 
 const OfferProducts = () => {
-  // Only show products with discounts
-  const offerProducts = productsData.products.filter(
-    (product) => product.discountPercentage > 0
+  const dispatch = useDispatch();
+  const { items, status } = useSelector(state => state.products);
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, status]);
+
+  // 🔥 Filter ONLY discounted products
+  const offerProducts = items.filter(
+    product => product.discountPercentage >= 10
   );
+
+  if (status === "loading") return <h2>Loading offers...</h2>;
+  if (status === "error") return <h2>Error loading offers</h2>;
 
   return (
     <section className="offer-products">
       <h2>🔥 Hot Deals</h2>
-      <div className="products-grid">
-        {offerProducts.map((product) => {
-          const discountedPrice = Math.round(
-            product.price * (1 - product.discountPercentage / 100)
-          );
 
-          return (
-            <div className="product-card" key={product.id}>
-              <div className="product-img">
-                <img src={product.thumbnail} alt={product.title} />
-                <span className="discount-badge">
-                  {product.discountPercentage}% OFF
-                </span>
-              </div>
-              <div className="product-info">
-                <h3>{product.title}</h3>
-                <p className="brand">{product.brand}</p>
-                <div className="price-section">
-                  <span className="price">₹{discountedPrice}</span>
-                  <span className="original-price">₹{product.price}</span>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-            </div>
-          );
-        })}
+      <div className="products-grid">
+        {offerProducts.map(product => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            showDiscount={true}
+          />
+        ))}
       </div>
     </section>
   );

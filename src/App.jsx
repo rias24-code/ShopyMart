@@ -11,6 +11,7 @@ import WishlistPage from './pages/wishlist/WishlistPage'
 import Header from "./pages/home/header/Header";
 import Footer from './pages/home/footer/Footer';
 import Orders from "./pages/order/Orders";
+import Checkout from "./pages/checkout/Checkout";
 
 const App = () => {
   const { state } = useContext(AuthContext);
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
           <Route path="/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
           <Route path='/orders' element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+          <Route path='/checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         </Routes>
       </main>
 

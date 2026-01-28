@@ -45,7 +45,7 @@
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   font-size: 30px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .footer-payments img {
-  height: 30px;
+  height: 40px;
   object-fit: contain;
 }
 

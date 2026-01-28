@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./CartPage.css";
 
 const CartIcon = () => {
-  const cart = useSelector(state => state.cart);
-  const count = cart.reduce((sum, i) => sum + i.qty, 0);
+  const cartItems = useSelector(state => state.cart.items);
+
+  const count = cartItems.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
 
   return (
     <Link to="/cart" className="cart-icon">
