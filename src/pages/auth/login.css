@@ -123,3 +123,21 @@
     padding: 26px 20px;
   }
 }
+
+.google-btn {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.google-btn img {
+  width: 18px;
+}
